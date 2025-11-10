@@ -15,6 +15,7 @@ class User extends Model<User> {
   String? customer;
   String? profilePicUrl;
   DateTime? createdAt;
+  DateTime? updatedAt;
 
   @override
   Table get table => Table(
@@ -39,16 +40,16 @@ class User extends Model<User> {
         'id': id,
         'name': name,
         'email': email,
-        'password': password,
         'profilePicUrl': profilePicUrl,
         'phone': phone,
         'gender': gender,
         'customer': customer,
-        "created_at": createdAt
+        "created_at": createdAt,
+        "updated_at": updatedAt
       };
 
   @override
-  User fromMap(Map<String, dynamic> map) {
+  User fromMap(Map<dynamic, dynamic> map) {
     return User()
       ..id = map['id']
       ..name = map['name']
@@ -57,6 +58,7 @@ class User extends Model<User> {
       ..phone = map['phone']
       ..customer = map['customer']
       ..gender = map['gender']
-      ..createdAt = map["created_at"];
+      ..createdAt = map["created_at"]
+      ..updatedAt = map["updated_at"];
   }
 }

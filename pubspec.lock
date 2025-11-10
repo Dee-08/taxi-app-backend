@@ -109,10 +109,10 @@ packages:
     dependency: "direct main"
     description:
       name: flint_dart
-      sha256: d1a5c1ddae4dc4908d00da290d6f0e535594ad7ede43c6b1458035ca71495ed7
+      sha256: "6fc8df9c8685407cdcf878ee3636c100bb3e7816d782b240cde6aea85b9eff07"
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.0+15"
+    version: "1.0.0+17"
   intl:
     dependency: transitive
     description:
@@ -197,26 +197,10 @@ packages:
     dependency: transitive
     description:
       name: postgres
-      sha256: "013c6dc668eaab9771c4d3f5fc3e87ed4b3cd4ab3587ac6943cc1f38509ff723"
+      sha256: fefbbfe749c6130e5096588b9c4459173684c695952cd7636ab19be76f255469
       url: "https://pub.dev"
     source: hosted
-    version: "3.5.7"
-  sasl_scram:
-    dependency: transitive
-    description:
-      name: sasl_scram
-      sha256: a47207a436eb650f8fdcf54a2e2587b850dc3caef9973ce01f332b07a6fc9cb9
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.1.1"
-  saslprep:
-    dependency: transitive
-    description:
-      name: saslprep
-      sha256: "3d421d10be9513bf4459c17c5e70e7b8bc718c9fc5ad4ba5eb4f5fd27396f740"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.3"
+    version: "3.5.9"
   stack_trace:
     dependency: transitive
     description:
@@ -257,14 +241,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.1+1"
-  unorm_dart:
-    dependency: transitive
-    description:
-      name: unorm_dart
-      sha256: "0c69186b03ca6addab0774bcc0f4f17b88d4ce78d9d4d8f0619e30a99ead58e7"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.3.2"
   uuid:
     dependency: transitive
     description:
@@ -282,4 +258,4 @@ packages:
     source: hosted
     version: "1.1.1"
 sdks:
-  dart: ">=3.8.1 <4.0.0"
+  dart: ">=3.9.0 <4.0.0"
