@@ -1,5 +1,7 @@
 import 'package:flint_dart/auth.dart';
 import 'package:flint_dart/flint_dart.dart';
+import 'package:taxi_app_backend/src/mail/verify_mail.dart';
+import 'package:taxi_app_backend/src/models/user_model.dart';
 
 class AuthController {
   Future<Response> register(Request req, Response res) async {
@@ -9,7 +11,6 @@ class AuthController {
       "password": "required|string|min:3|confirmed",
       "phone": "string|min:3",
       "role": "string|min:3",
-      "customer": "required|string|min:3",
     });
     final data = await Auth.register(
         name: body["name"],
@@ -18,9 +19,14 @@ class AuthController {
         additionalData: {
           'gender': body['gender'],
           'phone': body['phone'],
-          'role': body['role']
         });
 
+    var otp =
+        await Auth.generateNumericVerificationCode(data["email"], length: 5);
+
+    final verify = await VerifyMail(
+        recipientEmail: data['email'], recipientName: data["name"], otp: otp);
+    verify.send();
     return res.respond({"message": "User registered", "data": data});
   }
 
@@ -33,6 +39,7 @@ class AuthController {
     return res.json({
       "status": "User logged in successfully",
       "data": {
+        "user": User().where("email", body["email"]),
         "token": token,
       }
     });
